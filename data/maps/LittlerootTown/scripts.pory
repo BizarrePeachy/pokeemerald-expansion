@@ -1,4 +1,4 @@
-raw '
+raw `
 .set LOCALID_TWIN, 1
 .set LOCALID_MOM, 4
 .set LOCALID_RIVAL, 7
@@ -1022,10 +1022,63 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
-'
+LittlerootTown_EventScript_WarningSign::
+	lockall
+	msgbox LittlerootTown_EventScript_WarningSign_Text_0
+	releaseall
+	return
 
-script LittlerootTown_EventScript_WarningSign {
-    lockall
-    msgbox("Yeah I'm not gonna lie I trapped you here")
-    releaseall
+
+LittlerootTown_EventScript_WarningSign_Text_0:
+	.string "Yeah I'm not gonna lie I trapped you here$"
+	
+
+LittlerootTown_EventScript_RandomSign::
+	lockall
+	msgbox LittlerootTown_EventScript_RandomSign_Text_0
+	releaseall
+	return
+
+
+LittlerootTown_EventScript_RandomSign_Text_0:
+	.string "You should look in the hole...$"
+
+`
+
+script LittlerootTown_EventScript_SetupRivalBattle {
+
+}
+
+script LittlerootTown_EventScript_MayRivalBattle {
+	trainerbattle_single(TRAINER_MAY_ROUTE_103_TORCHIC, May_Intro, May_Outro, RivalBattleOver)
+	msgbox(PostBattle_May, MSGBOX_AUTOCLOSE)
+	waitmessage
+	end
+}
+
+script RivalBattleOver {
+	lockall
+	applymovement(9, MayLeave)
+	waitmovement(0)
+	removeobject(9)
+	waitmessage
+	release
+}
+
+movement MayLeave {
+	face_down
+	walk_right
+	walk_fast_down * 7
+}
+
+text May_Intro {
+	"Yo dumb aah aint gonna win!"
+}
+
+text May_Outro {
+	"You should prolly leave before I \ncrashout......"
+}
+
+text PostBattle_May {
+	"Leave me alone....."
 }
