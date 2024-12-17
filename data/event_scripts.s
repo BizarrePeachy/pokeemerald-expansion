@@ -1157,3 +1157,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/LittlerootPokeCenter/scripts.inc"
 
 	.include "data/maps/SecretRoom/scripts.inc"
+
+	.include "data/maps/Route104PokeCenter/scripts.inc"

@@ -41,10 +41,14 @@ OldaleTown_PokemonCenter_2F_EventScript_RecordCorner::
 
 OldaleTown_PokemonCenter_2F_EventScript_TouchPlushie::
 # 26 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	lockall
+# 27 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	msgbox OldaleTown_PokemonCenter_2F_EventScript_TouchPlushie_Text_0
-	end
+# 28 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+	releaseall
+	return
 
 
 OldaleTown_PokemonCenter_2F_EventScript_TouchPlushie_Text_0:
-# 26 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
+# 27 "data/maps/OldaleTown_PokemonCenter_2F/scripts.pory"
 	.string "HES A DOLL DUDE!!$"
